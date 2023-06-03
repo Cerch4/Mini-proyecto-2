@@ -1,4 +1,5 @@
 // C++ Implementation of Quad Tree
+#include "QuadTree.h"
 #include <cmath>
 #include <iostream>
 using namespace std;
@@ -6,7 +7,7 @@ using namespace std;
 // Used to hold details of a point
 
 // The main quadtree class
-class Quad {
+QuadTree::QuadTree(int size){
 	// Hold details of the boundary of this node
 	Point topLeft;
 	Point botRight;
@@ -47,7 +48,7 @@ public:
 };
 
 // Insert a node into the quadtree
-void Quad::insert(Node* node)
+void QuadTree::insert(Point p, int data)
 {
 	if (node == NULL)
 		return;
@@ -112,7 +113,7 @@ void Quad::insert(Node* node)
 }
 
 // Find a node in a quadtree
-Node* Quad::search(Point p)
+Node* QuadTree::search(Point p)
 {
 	// Current quad cannot contain it
 	if (!inBoundary(p))
