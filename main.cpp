@@ -1,5 +1,28 @@
+#include "QuadTree.h"
+#include <iostream>
+
+
+using namespace std;
+
 int main() {
-  Quad plane2D(Point(0, 0), Point(8, 8));
+
+
+  QuadTree among(Point(1,1),Point(16,16));
+  cout << among.UpperLim.x << endl;
+  cout << among.UpperLim.y << endl;
+  cout << among.LowerLim.x << endl;
+  cout << among.LowerLim.y << endl;
+  cout << among.hasSons<< endl;
+  Node p1(Point(1, 1), 5);
+  //cout << among.inBoundary(p1.point) << endl;
+  among.insert(&p1);
+
+  cout<< among.search(Point(1,1));
+
+
+
+
+  /*Quad plane2D(Point(0, 0), Point(8, 8));
   Node p1(Point(0, 0), 5);
   Node p2(Point(0, 1), 4);
   Node p3(Point(1, 0), 2);
@@ -29,6 +52,6 @@ int main() {
   if(p != NULL) cout << p->data << endl;
   else cout << "No existe el punto." << endl;
   // Contenido en la coordenada (1,5): No existe el punto.
-  
+  */
   return 0;
 }
